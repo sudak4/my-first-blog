@@ -21,16 +21,19 @@
       	<div class="navbar-right ">
       		<ul class="nav navbar-nav">
       			<li>
-      			<a href="#index">Home</a>
+      			     <a href="#index">Home</a>
       			</li>
       			<li>
               <a href="#aboutme" >About</a>
-              </li>
-              <li>
-      			<a href="#education">Experience and Coding</a>
+            </li>
+            <li>
+              <a href="#mapa" >Map</a>
+            </li>
+            <li>
+      			     <a href="#education">Experience and Coding</a>
       			</li>
             <li>
-            <a href="#hola">Contact</a>
+              <a href="#hola">Contact</a>
             </li>
       		</ul>
       	</div>
@@ -73,91 +76,16 @@
                      <span class="glyphicon glyphicon-download-alt"></span>Download CV
                    </a>
                  </p>
-                 <h2> Places I've been in... </h2>
-                 <div id="map"></div>
-    <script>
-      function initMap() {
-        var locations = [
-     ['Santiago', -33.455029, -70.587076, 2],
-     ['Temuco', -38.735902, -72.590374, 1],
-     ['Chiloe', -42.623969, -73.926573, 1],
-     ['Delft', 51.996592, 4.356232, 2],
-     ['Guatemala', 14.554472, -90.735787, 1],
-     ['Galapagos',-0.726340, -90.329625, 1],
-     ['Naxos', 37.102438, 25.374844, 1],
-     ['El Cairo, Egypt', 30.044420, 31.235712, 1],
-     ['Luxor',25.687243, 32.639636, 1],
-     ['Cusco, Peru',-13.531950, -71.967463, 1],
-     ['San Pedro, Belice', 17.921, -87.96, 1],
-     ['Chicago', 41.878114, -87.629798, 1],
-     ['New York',40.712784, -74.005941, 1],
-     ['Miami', 25.761680, -80.19179, 1],
-     ['Bolivia', -16.290154, -63.588653, 1],
-     ['Athens', 37.983810, 23.727539, 1],
-     ['Madrid', 40.416775, -3.70379, 1],
-     ['Paris',48.856614, 2.352222, 1],
-     ['Brussels', 50.850346, 4.351721, 1],
-     ['Roma', 41.902783, 12.496366, 1],
-     ['Ciudad de Mexico',19.432608, -99.133208, 1],
-     ['London', 51.507351, -0.127758, 1],
-     ['Dublin', 53.349805, -6.26031, 1],
-     ['Berlin', 52.520007, 13.404954, 1],
-     ['Warsaw',52.229676, 21.012229, 1],
-     ['Sofia', 42.699668, 23.320669, 1],
-     ['Salzburg',47.809490, 13.05501, 1],
-     ['Munich', 48.135125, 11.581981, 1],
-     ['Istanbul',41.008238, 28.978359, 1],
-     ['Rio de Janeiro', -22.906847, -43.172896, 1],
-     ['Goreme',38.643056, 34.828889, 1],
-     ['Salvador Bahia', -12.972218, -38.501414, 1],
-     ['Buzios',-22.756391, -41.889042, 1],
-     ['Buenos Aires',-34.603684, -58.381559, 1],
-     ['Bariloche',-41.133472, -71.310278, 1],
-   ];
 
-   var map = new google.maps.Map(document.getElementById('map'), {
-     zoom: 2,
-     center: new google.maps.LatLng(17.478159, -22.892341),
-     mapTypeId: google.maps.MapTypeId.ROADMAP
-   });
 
-   var infowindow = new google.maps.InfoWindow();
-
-   var marker, i;
-
-   for (i = 0; i < locations.length; i++) {
-     if (locations[i][3]==1){
-     marker = new google.maps.Marker({
-       position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-       map: map,
-       icon: {
-         path: 'M -3,0 0,-3 3,0 0,3 z',
-      strokeColor: '#F00',
-      fillColor: '#F00',
-      fillOpacity: 1
-          },
-     });
-}
-else{
-  marker = new google.maps.Marker({
-    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-    map: map,})
-}
-     google.maps.event.addListener(marker, 'click', (function(marker, i) {
-       return function() {
-         infowindow.setContent(locations[i][0]);
-         infowindow.open(map, marker);
-       }
-     })(marker, i));
-   }
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSlJNs0Je6kEIZyZ5ytB1yC0So2oHyDy4&callback=initMap">
-    </script>
            </div>
         </div>
       </div>
+
+      <div id="mapa" class="uni">
+        <h2> Places I've been in... </h2>
+        <div id="map"></div>
+    </div>
 <div id="education" class="uni">
   <div class="tab ">
   <ul class="nav nav-stacked">
@@ -367,6 +295,7 @@ prediction  of  events  in  TWITTER” can be found here:
 					</ul>
 				</div>
 				</div>
+        <!--
         <h2 style="text-align:center;text-decoration:underline">Coding</h2>
         <ul>
           <div class="col-sm-6">
@@ -381,6 +310,7 @@ prediction  of  events  in  TWITTER” can be found here:
           <p>Knowledge on Python, C#, PHP, Android, R, Bootstrap, HTML, JavaScript, CSS. </p>
           </ul>
           </div>
+        -->
 			</div>
 
   </div>
@@ -510,6 +440,91 @@ document.getElementById("defaultOpen").click();
 
 
 
+</script>
+
+
+
+
+
+<script>
+  function initMap() {
+    var locations = [
+ ['Santiago', -33.455029, -70.587076, 2],
+ ['Temuco', -38.735902, -72.590374, 1],
+ ['Chiloe', -42.623969, -73.926573, 1],
+ ['Delft', 51.996592, 4.356232, 2],
+ ['Guatemala', 14.554472, -90.735787, 1],
+ ['Galapagos',-0.726340, -90.329625, 1],
+ ['Naxos', 37.102438, 25.374844, 1],
+ ['El Cairo, Egypt', 30.044420, 31.235712, 1],
+ ['Luxor',25.687243, 32.639636, 1],
+ ['Cusco, Peru',-13.531950, -71.967463, 1],
+ ['San Pedro, Belice', 17.921, -87.96, 1],
+ ['Chicago', 41.878114, -87.629798, 1],
+ ['New York',40.712784, -74.005941, 1],
+ ['Miami', 25.761680, -80.19179, 1],
+ ['Bolivia', -16.290154, -63.588653, 1],
+ ['Athens', 37.983810, 23.727539, 1],
+ ['Madrid', 40.416775, -3.70379, 1],
+ ['Paris',48.856614, 2.352222, 1],
+ ['Brussels', 50.850346, 4.351721, 1],
+ ['Roma', 41.902783, 12.496366, 1],
+ ['Ciudad de Mexico',19.432608, -99.133208, 1],
+ ['London', 51.507351, -0.127758, 1],
+ ['Dublin', 53.349805, -6.26031, 1],
+ ['Berlin', 52.520007, 13.404954, 1],
+ ['Warsaw',52.229676, 21.012229, 1],
+ ['Sofia', 42.699668, 23.320669, 1],
+ ['Salzburg',47.809490, 13.05501, 1],
+ ['Munich', 48.135125, 11.581981, 1],
+ ['Istanbul',41.008238, 28.978359, 1],
+ ['Rio de Janeiro', -22.906847, -43.172896, 1],
+ ['Goreme',38.643056, 34.828889, 1],
+ ['Salvador Bahia', -12.972218, -38.501414, 1],
+ ['Buzios',-22.756391, -41.889042, 1],
+ ['Buenos Aires',-34.603684, -58.381559, 1],
+ ['Bariloche',-41.133472, -71.310278, 1],
+];
+
+var map = new google.maps.Map(document.getElementById('map'), {
+ zoom: 2,
+ center: new google.maps.LatLng(17.478159, -22.892341),
+ mapTypeId: google.maps.MapTypeId.ROADMAP
+});
+
+var infowindow = new google.maps.InfoWindow();
+
+var marker, i;
+
+for (i = 0; i < locations.length; i++) {
+ if (locations[i][3]==1){
+ marker = new google.maps.Marker({
+   position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+   map: map,
+   icon: {
+     path: 'M -3,0 0,-3 3,0 0,3 z',
+  strokeColor: '#F00',
+  fillColor: '#F00',
+  fillOpacity: 1
+      },
+ });
+}
+else{
+marker = new google.maps.Marker({
+position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+map: map,})
+}
+ google.maps.event.addListener(marker, 'click', (function(marker, i) {
+   return function() {
+     infowindow.setContent(locations[i][0]);
+     infowindow.open(map, marker);
+   }
+ })(marker, i));
+}
+  }
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSlJNs0Je6kEIZyZ5ytB1yC0So2oHyDy4&callback=initMap">
 </script>
 
 
