@@ -1,6 +1,7 @@
 {% load staticfiles %}
 <html>
 <head>
+  <meta charset="utf-8">
   <title>Lucas Montesinos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -14,12 +15,15 @@
   <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <h3 class="name1">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+      <i class="fa fa-bars"></i>
+      </button>
+      <a class="navbar-brand page-scroll" href="/">
       Lucas Montesinos
-    </h3>
+    </a>
     </div>
 
-    <div class="navbar-right ">
+    <div class="collapse navbar-collapse navbar-right navbar-main-collapse ">
       <ul class="nav navbar-nav">
         <li>
              <a href="/">Home</a>
@@ -44,43 +48,46 @@
 
 
 
-<div id="mapa" class="uni fmap">
-  <h2> Places I've been in... </h2>
-  <div id="map"></div>
-  <footer id="footer_" class="footer_">
-    <div class="row">
-    <div class="col-sm-7">
-      <p class="writeme">You can fin me here: </p>
-  <ul class="social2">
-     <span class="fa-stack">
-       <a href="https://www.facebook.com/lucas.montesinos.3">
-       <i class="fa fa_custom fa-facebook fa-stack-1x "></i></a>
-     </span>
-     <span class="fa-stack ">
-      <a href="https://www.linkedin.com/in/lucas-montesinos-18238ba0/">
-       <i class="fa fa_custom fa-linkedin fa-stack-1x"></i></a>
-     </span>
-     <span class="fa-stack ">
-         <a href="https://twitter.com/Sudak_">
-       <i class="fa fa_custom fa-twitter fa-stack-1x "></i></a>
-     </span>
-     </ul>
+<div id="mapa" class="fmap">
+  <h2> Places I've been... </h2>
+  <div id="map" class="fmap_h"></div>
 
-  </div>
-  <div class="col-sm-5">
-    <ul class="social2">
-      <p class="writeme">or just write me an email to: </p>
-    <span class="fa-stack fa-lg">
-        <a href="mailto:lmontesinos10@gmail.com">
-      <i class="fa fa_custom_c fa-envelope fa-stack-1x " aria-hidden="true"></i></a>
-    </span>
-    lmontesinos10@gmail.com
-  </ul>
-  </div>
-  </div>
-  </footer>
 </div>
 
+
+
+<footer id="footer_" class="footer_">
+  <div class="row">
+  <div class="col-sm-7">
+    <p class="writeme">You can fin me here: </p>
+<ul class="social2">
+   <span class="fa-stack">
+     <a href="https://www.facebook.com/lucas.montesinos.3">
+     <i class="fa fa_custom fa-facebook fa-stack-1x "></i></a>
+   </span>
+   <span class="fa-stack ">
+    <a href="https://www.linkedin.com/in/lucas-montesinos-18238ba0/">
+     <i class="fa fa_custom fa-linkedin fa-stack-1x"></i></a>
+   </span>
+   <span class="fa-stack ">
+       <a href="https://twitter.com/Sudak_">
+     <i class="fa fa_custom fa-twitter fa-stack-1x "></i></a>
+   </span>
+   </ul>
+
+</div>
+<div class="col-sm-5">
+  <ul class="social2">
+    <p class="writeme">or just write me an email to: </p>
+  <span class="fa-stack fa-lg">
+      <a href="mailto:lmontesinos10@gmail.com">
+    <i class="fa fa_custom_c fa-envelope fa-stack-1x " aria-hidden="true"></i></a>
+  </span>
+  lmontesinos10@gmail.com
+</ul>
+</div>
+</div>
+</footer>
 
 
 <script>

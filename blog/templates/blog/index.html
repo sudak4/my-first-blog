@@ -1,6 +1,7 @@
 {% load staticfiles %}
 <html>
     <head>
+      <meta charset="utf-8">
       <title>Lucas Montesinos</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -14,12 +15,15 @@
       <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
       <div class="container">
       	<div class="navbar-header">
-          <h3 class="name1">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+      		<i class="fa fa-bars"></i>
+      		</button>
+          <a class="navbar-brand page-scroll" href="/">
       		Lucas Montesinos
-        </h3>
+        </a>
       	</div>
 
-      	<div class="navbar-right ">
+      	<div class="collapse navbar-collapse navbar-right navbar-main-collapse ">
       		<ul class="nav navbar-nav">
       			<li>
       			     <a style="background-color:white;color:#47A089" href="/">Home</a>
