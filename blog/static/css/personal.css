@@ -144,7 +144,7 @@ a:hover .bottom:after {
 
 .about {
 	width:100%;
-	height:100%;
+	height:auto;
 	padding:100px 0 100px 0;
 	background-image: radial-gradient(circle at 50% 50%,rgba(250,250,250,0.46),rgba(250,250,250,0.88)),url('background-images/goreme.jpg');
 	color: black;
@@ -165,11 +165,11 @@ a:hover .bottom:after {
 }
 
 .bio{
-	height: 100%;
+	height: 80%;
 	text-align: left;
 }
 .prof_im{
-	height: 100%;
+	height: 550px;
 	margin-left: 30px;
 }
 
@@ -178,6 +178,8 @@ a:hover .bottom:after {
         height: 80%;
         width: 80%;
        }
+
+
 
 .img-circle {
     border-radius: 50%;
@@ -205,11 +207,16 @@ a:hover .bottom:after {
 }
 
 .uni {
+	display: inline-block;
 	width:100%;
-	height: 100%;
+	height: auto;
 	padding:55px 0 0px 0;
 	background-color:	white;
 	color: black;
+}
+
+.fmap{
+			 	height:100%;
 }
 
 * {box-sizing: border-box}
@@ -217,11 +224,12 @@ body {font-family: "Lato", sans-serif;}
 
 /* Style the tab botones*/
 div.tab {
+	display: flex;
     float: left;
     border: 3px solid #ccc;
     background-color: #f1f1f1;
     width: 20%;
-    height: 100%;
+    height: auto;
 }
 
 /* Style the buttons inside the tab */
@@ -229,7 +237,7 @@ div.tab button {
     display: block;
     background-color: inherit;
     color: black;
-    padding: 12px 16px;
+    padding: 9px 16px;
     width: 100%;
     border: none;
     outline: none;
@@ -251,13 +259,15 @@ div.tab button.active {
 
 /* Style the tab content */
 .tabcontent {
+	display: flex;
 		margin-left: 0;
     float: left;
 		border: 3px solid #ccc;
     width: 80%;
     border-left: none;
 		border-right: none;
-		height: 100%;
+		border-bottom: none;
+		height: auto;
 }
 
 .rightMenu {
@@ -394,7 +404,7 @@ box-shadow: 0 7px 4px #777;
 
 .beauchef1{
 	background-image: radial-gradient(circle at 50% 50%,rgba(250,250,250,0.46),rgba(250,250,250,0.88)),url('background-images/beauchef2.png');
-	height: 100%;
+	height: auto;
 }
 .delft1{
 	background-image: radial-gradient(circle at 50% 50%,rgba(250,250,250,0.46),rgba(250,250,250,0.88)),url('background-images/delft_back.png');
@@ -408,8 +418,9 @@ box-shadow: 0 7px 4px #777;
 	background-size: contain;
 }
 
-.over1a{
-	background-image: radial-gradient(circle at 50% 50%,rgba(250,250,250,0.46),rgba(250,250,250,0.88)),url('background-images/exp1.png');
+.over1{
+	display: inline-block;
+	background-color:white;
 	height: 100%;
 	background-size: contain;
 }
@@ -428,12 +439,14 @@ box-shadow: 0 7px 4px #777;
 	color: black;
 }
 
-.hola {
+.footer_ {
 	width:100%;
-	padding:10px 20px 110px 20px;
+	height: auto;
+	padding:10px 20px 0px 20px;
 	background-color:	#333333;
 	color: white;
 }
+
 .writeme{
 	text-align:  left;
 }

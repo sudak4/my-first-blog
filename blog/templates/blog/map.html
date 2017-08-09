@@ -1,0 +1,167 @@
+{% load staticfiles %}
+<html>
+<head>
+  <title>Lucas Montesinos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="{% static 'css/personal.css' %}">
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
+  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <h3 class="name1">
+      Lucas Montesinos
+    </h3>
+    </div>
+
+    <div class="navbar-right ">
+      <ul class="nav navbar-nav">
+        <li>
+             <a href="/">Home</a>
+        </li>
+
+        <li>
+          <a style="background-color:white;color:#47A089">Map</a>
+        </li>
+        <li>
+             <a href="exp/">Experience and Coding</a>
+        </li>
+        <li>
+          <a href="#footer_">Contact</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+  </nav>
+
+
+
+
+<div id="mapa" class="uni fmap">
+  <h2> Places I've been in... </h2>
+  <div id="map"></div>
+  <footer id="footer_" class="footer_">
+    <div class="row">
+    <div class="col-sm-7">
+      <p class="writeme">You can fin me here: </p>
+  <ul class="social2">
+     <span class="fa-stack">
+       <a href="https://www.facebook.com/lucas.montesinos.3">
+       <i class="fa fa_custom fa-facebook fa-stack-1x "></i></a>
+     </span>
+     <span class="fa-stack ">
+      <a href="https://www.linkedin.com/in/lucas-montesinos-18238ba0/">
+       <i class="fa fa_custom fa-linkedin fa-stack-1x"></i></a>
+     </span>
+     <span class="fa-stack ">
+         <a href="https://twitter.com/Sudak_">
+       <i class="fa fa_custom fa-twitter fa-stack-1x "></i></a>
+     </span>
+     </ul>
+
+  </div>
+  <div class="col-sm-5">
+    <ul class="social2">
+      <p class="writeme">or just write me an email to: </p>
+    <span class="fa-stack fa-lg">
+        <a href="mailto:lmontesinos10@gmail.com">
+      <i class="fa fa_custom_c fa-envelope fa-stack-1x " aria-hidden="true"></i></a>
+    </span>
+    lmontesinos10@gmail.com
+  </ul>
+  </div>
+  </div>
+  </footer>
+</div>
+
+
+
+<script>
+  function initMap() {
+    var locations = [
+ ['Santiago', -33.455029, -70.587076, 2],
+ ['Temuco', -38.735902, -72.590374, 1],
+ ['Chiloe', -42.623969, -73.926573, 1],
+ ['Delft', 51.996592, 4.356232, 2],
+ ['Guatemala', 14.554472, -90.735787, 1],
+ ['Galapagos',-0.726340, -90.329625, 1],
+ ['Naxos', 37.102438, 25.374844, 1],
+ ['El Cairo, Egypt', 30.044420, 31.235712, 1],
+ ['Luxor',25.687243, 32.639636, 1],
+ ['Cusco, Peru',-13.531950, -71.967463, 1],
+ ['San Pedro, Belice', 17.921, -87.96, 1],
+ ['Chicago', 41.878114, -87.629798, 1],
+ ['New York',40.712784, -74.005941, 1],
+ ['Miami', 25.761680, -80.19179, 1],
+ ['Bolivia', -16.290154, -63.588653, 1],
+ ['Athens', 37.983810, 23.727539, 1],
+ ['Madrid', 40.416775, -3.70379, 1],
+ ['Paris',48.856614, 2.352222, 1],
+ ['Brussels', 50.850346, 4.351721, 1],
+ ['Roma', 41.902783, 12.496366, 1],
+ ['Ciudad de Mexico',19.432608, -99.133208, 1],
+ ['London', 51.507351, -0.127758, 1],
+ ['Dublin', 53.349805, -6.26031, 1],
+ ['Berlin', 52.520007, 13.404954, 1],
+ ['Warsaw',52.229676, 21.012229, 1],
+ ['Sofia', 42.699668, 23.320669, 1],
+ ['Salzburg',47.809490, 13.05501, 1],
+ ['Munich', 48.135125, 11.581981, 1],
+ ['Istanbul',41.008238, 28.978359, 1],
+ ['Rio de Janeiro', -22.906847, -43.172896, 1],
+ ['Goreme',38.643056, 34.828889, 1],
+ ['Salvador Bahia', -12.972218, -38.501414, 1],
+ ['Buzios',-22.756391, -41.889042, 1],
+ ['Buenos Aires',-34.603684, -58.381559, 1],
+ ['Bariloche',-41.133472, -71.310278, 1],
+];
+
+var map = new google.maps.Map(document.getElementById('map'), {
+ zoom: 2,
+ center: new google.maps.LatLng(17.478159, -22.892341),
+ mapTypeId: google.maps.MapTypeId.ROADMAP
+});
+
+var infowindow = new google.maps.InfoWindow();
+
+var marker, i;
+
+for (i = 0; i < locations.length; i++) {
+ if (locations[i][3]==1){
+ marker = new google.maps.Marker({
+   position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+   map: map,
+   icon: {
+     path: 'M -3,0 0,-3 3,0 0,3 z',
+  strokeColor: '#F00',
+  fillColor: '#F00',
+  fillOpacity: 1
+      },
+ });
+}
+else{
+marker = new google.maps.Marker({
+position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+map: map,})
+}
+ google.maps.event.addListener(marker, 'click', (function(marker, i) {
+   return function() {
+     infowindow.setContent(locations[i][0]);
+     infowindow.open(map, marker);
+   }
+ })(marker, i));
+}
+  }
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSlJNs0Je6kEIZyZ5ytB1yC0So2oHyDy4&callback=initMap">
+</script>
+</body>
+</html>
