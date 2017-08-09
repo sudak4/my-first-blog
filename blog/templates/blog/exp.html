@@ -54,12 +54,9 @@
         <button class="tablinks dropbtn" onclick="openCity3(event, 'U_intro')">
           <img class="im_uni" src="{% static 'images/typewrite.png' %}"></i>
       </button>
+    </li>
       <li>
         <h2 class="menu_ed">Universities</h2>
-      </li>
-      <li>
-      </li>
-      <li>
           <div class=" dropdown">
           <button class="tablinks dropdown-toggle dropbtn" data-toggle="dropdown" onclick="openCity(event, 'TU_exp')">
           <img class="im_uni" src="{% static 'images/tud.png' %}"><i class="fa fa-chevron-circle-right flecha"></i>
@@ -72,6 +69,7 @@
         </div>
       </li>
       <div class="dropdown">
+        <li>
         <button class="tablinks dropbtn dropdown-toggle" data-toggle="dropdown" onclick="openCity(event, 'Ch_exp')">
           <img class="im_uni" src="{% static 'images/fcfm1.png' %}"><i class="fa fa-chevron-circle-right  flecha"></i>
         </button>
@@ -79,19 +77,19 @@
           <li><a href="#education" class="tablinks" onclick="openCity2(event, 'Ch_exp')">Experience</a></li>
           <li><a href="#education" class="tablinks" onclick="openCity2(event, 'Ch_thesis')">Thesis and publication</a></li>
         </ul>
+      </li>
       </div>
       <li class="contac">
         <h2 class="menu_ed">Work</h2>
-        <button class="tablinks dropbtn" href="#education" onclick="openCity3(event, 'Contac')">
+        <button class="tablinks dropbtn"  onclick="openCity3(event, 'Contac')">
           <img class="im_uni" src="{% static 'images/contac1.png' %}"></i>
         </button>
       </li>
       <li class="contac">
         <h2 class="menu_ed">Coding</h2>
-        <button class="tablinks dropbtn" href="#education" onclick="openCity3(event, 'Coding')">
+        <button class="tablinks dropbtn" onclick="openCity3(event, 'Coding')">
           <img class="im_uni" src="{% static 'images/code_1.png' %}"></i>
       </button>
-
   </li>
     </ul>
   </div>
@@ -104,6 +102,7 @@
     </div>
     </div>
     <div id="Ch_thesis" class="tabcontent beauchef1">
+      <div class="row">
       <div class="col-sm-1"></div>
       <div class="col-sm-11">
       <h3>Sentiment Analysis in Twitter</h3>
@@ -133,6 +132,7 @@
           <a href="http://ieeexplore.ieee.org/document/7404680/"> <ul class="text_edu link1">IEEE Chilecon 2015</ul></a>
         </div>
     </div>
+  </div>
     <div id="TU_exp" class="tabcontent delft1">
       <h3>2016-2018 </h3>
       <h3> TU Delft </h3>
@@ -150,55 +150,71 @@
         <li><a>Wavefield Imaging</a></li>
         </div>
     </div>
-    <div id="TU_thesis" class="tabcontent delft1">
+    <div id="TU_thesis" class="tabcontent over1 delft1">
       <h3>2016-2018 </h3>
       <h3> TU Delft </h3>
       <h5>MSc. Electrical Engineering </h5>
     </div>
-    <div id="Contac" class="tabcontent con1">
+    <div id="Contac" class="tabcontent over1 con1">
       <h3>Contac Ingenieros</h3>
       <ul>
         <h3>2014-2016 </h3>
         <h3> Contac Ingenieros Ltda.</h3>
         <p style="text-decoration:underline">Pattern recognition and failure prognosis using PCA:</p>
-        <img  width="300px" src="{% static 'images/PCA.gif' %}">
+        <img  width="20%" src="{% static 'images/PCA.gif' %}">
         <p style="text-decoration:underline;margin-top:30px;">Virtual sensors for critical KPI:</p>
-        <img  width="300px" src="{% static 'images/p80a.jpg' %}">
+        <img  width="20%" src="{% static 'images/p80a.jpg' %}">
       </ul>
     </div>
     <div id="Coding" class="tabcontent over1">
-      <div class="col-sm-1"></div>
-      <div class="col-sm-11">
+      <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-11">
         <h3>Code Languages</h3>
-        <ul>
+        <div style="display:inline-block;width:100%;">
+        <ul >
+          <li>
          <h1>MATLAB</h1>
             <div class="w3-grey bar1">
               <div class="w3-black bar2" style="width:90%"></div>
             </div>
+          </li>
+          <li>
             <h1>Python</h1>
             <div class="w3-grey bar1">
               <div class="w3-black bar2" style="width:20%"></div>
             </div>
+          </li>
+          <li>
               <h1>C#</h1>
             <div class="w3-grey bar1">
               <div class="w3-black bar2" style="width:30%"></div>
             </div>
+          </li>
+          <li>
               <h1>.NET</h1>
             <div class="w3-grey bar1">
               <div class="w3-black bar2" style="width:70%"></div>
             </div>
+          </li>
+          <li>
               <h1>Perl</h1>
             <div class="w3-grey bar1">
               <div class="w3-black bar2" style="width:50%"></div>
             </div>
+          </li>
+          <li>
               <h1>PHP</h1>
             <div class="w3-grey bar1">
               <div class="w3-black bar2" style="width:30%"></div>
             </div>
+            <li>
       </ul>
+    </div>
       </div>
       <h3 style="margin-left:5%;margin-top:2%">Knowledge on Android, R, Bootstrap, HTML, JavaScript, CSS. </h3>
     </div>
+  </div>
     <div id="U_intro" class="tabcontent over1">
       <div class="row">
   				<div class="col-md-12">
