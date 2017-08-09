@@ -25,8 +25,12 @@ h2 {
 }
 
 .menu_ed{
+font-size: 100%;
+overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 margin-bottom: 5px;
-max-width: 90%;
+max-width: auto;
 }
 h3 {
 	margin:0 0 2px;
@@ -284,7 +288,7 @@ body {font-family: "Lato", sans-serif;}
 
 /* Style the tab botones*/
 div.tab {
-	display: flex;
+	display: run-in;
     float: left;
     border: 3px solid #ccc;
     background-color: #f1f1f1;
@@ -323,11 +327,12 @@ div.tab button.active {
 	margin-top: 50px;
 		margin-left: 0;
     float: left;
-		border: 3px solid #ccc;
+
     width: 80%;
     border-left: none;
 		border-right: none;
 		border-bottom: none;
+		border-top: none;
 		height: auto;
 }
 
