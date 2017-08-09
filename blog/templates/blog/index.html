@@ -1,0 +1,517 @@
+{% load staticfiles %}
+<html>
+    <head>
+      <title>Lucas Montesinos</title>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+      <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="{% static 'css/personal.css' %}">
+    </head>
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
+      <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+      <div class="container">
+      	<div class="navbar-header">
+          <h3 class="name1">
+      		Lucas Montesinos
+        </h3>
+      	</div>
+
+      	<div class="navbar-right ">
+      		<ul class="nav navbar-nav">
+      			<li>
+      			<a href="#index">Home</a>
+      			</li>
+      			<li>
+              <a href="#aboutme" >About</a>
+              </li>
+              <li>
+      			<a href="#education">Experience and Coding</a>
+      			</li>
+            <li>
+            <a href="#hola">Contact</a>
+            </li>
+      		</ul>
+      	</div>
+      	<!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+      </nav>
+      <header id="index" class="intro">
+        <div class="intro-body">
+          <div class="container">
+            <div class="row">
+        			<div class="col-md-8 col-md-offset-2">
+                <h1 class="brand-heading">Hi, I'm Lucas</h1>
+                <p> Electrical Engineer with experience in <b class="desta"> Signal Processing </b> and <b class="desta">
+                  Machine Learning</b> techniques wherever is needed, from audio and speech recognition to wavefield and medical imaging.</p>
+                  <a href="#aboutme">
+                  <span class="bottom"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div id="aboutme" class="about">
+        <div class = "row">
+           <div class="col-sm-5">
+              <img class="prof_im" src="static/images/termas.jpg" >
+
+
+           </div>
+           <div class="col-sm-7 bio">
+             <h2> About me </h2>
+             <p style="margin-top:-20px;"> I grew up in Santiago, Chile.
+               I studied electrical engineer there and worked for 2 years after that in the mining industry working
+               in pattern recognition techniques. Then I moved to Delft, where I live today to get my master degree.
+               <p>
+                 <p>I love traveling around the world. Passionate about photography, Big Data and new technologies.</p>
+                 <p>
+                   <a href="static/images/CV_Lucas_Montesinos.pdf" class="btn btn-info btn-lg wrapper" download>
+                     <span class="glyphicon glyphicon-download-alt"></span>Download CV
+                   </a>
+                 </p>
+                 <h2> Places I've been in... </h2>
+                 <div id="map"></div>
+    <script>
+      function initMap() {
+        var locations = [
+     ['Santiago', -33.455029, -70.587076, 2],
+     ['Temuco', -38.735902, -72.590374, 1],
+     ['Chiloe', -42.623969, -73.926573, 1],
+     ['Delft', 51.996592, 4.356232, 2],
+     ['Guatemala', 14.554472, -90.735787, 1],
+     ['Galapagos',-0.726340, -90.329625, 1],
+     ['Naxos', 37.102438, 25.374844, 1],
+     ['El Cairo, Egypt', 30.044420, 31.235712, 1],
+     ['Luxor',25.687243, 32.639636, 1],
+     ['Cusco, Peru',-13.531950, -71.967463, 1],
+     ['San Pedro, Belice', 17.921, -87.96, 1],
+     ['Chicago', 41.878114, -87.629798, 1],
+     ['New York',40.712784, -74.005941, 1],
+     ['Miami', 25.761680, -80.19179, 1],
+     ['Bolivia', -16.290154, -63.588653, 1],
+     ['Athens', 37.983810, 23.727539, 1],
+     ['Madrid', 40.416775, -3.70379, 1],
+     ['Paris',48.856614, 2.352222, 1],
+     ['Brussels', 50.850346, 4.351721, 1],
+     ['Roma', 41.902783, 12.496366, 1],
+     ['Ciudad de Mexico',19.432608, -99.133208, 1],
+     ['London', 51.507351, -0.127758, 1],
+     ['Dublin', 53.349805, -6.26031, 1],
+     ['Berlin', 52.520007, 13.404954, 1],
+     ['Warsaw',52.229676, 21.012229, 1],
+     ['Sofia', 42.699668, 23.320669, 1],
+     ['Salzburg',47.809490, 13.05501, 1],
+     ['Munich', 48.135125, 11.581981, 1],
+     ['Istanbul',41.008238, 28.978359, 1],
+     ['Rio de Janeiro', -22.906847, -43.172896, 1],
+     ['Goreme',38.643056, 34.828889, 1],
+     ['Salvador Bahia', -12.972218, -38.501414, 1],
+     ['Buzios',-22.756391, -41.889042, 1],
+     ['Buenos Aires',-34.603684, -58.381559, 1],
+     ['Bariloche',-41.133472, -71.310278, 1],
+   ];
+
+   var map = new google.maps.Map(document.getElementById('map'), {
+     zoom: 2,
+     center: new google.maps.LatLng(17.478159, -22.892341),
+     mapTypeId: google.maps.MapTypeId.ROADMAP
+   });
+
+   var infowindow = new google.maps.InfoWindow();
+
+   var marker, i;
+
+   for (i = 0; i < locations.length; i++) {
+     if (locations[i][3]==1){
+     marker = new google.maps.Marker({
+       position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+       map: map,
+       icon: {
+         path: 'M -3,0 0,-3 3,0 0,3 z',
+      strokeColor: '#F00',
+      fillColor: '#F00',
+      fillOpacity: 1
+          },
+     });
+}
+else{
+  marker = new google.maps.Marker({
+    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+    map: map,})
+}
+     google.maps.event.addListener(marker, 'click', (function(marker, i) {
+       return function() {
+         infowindow.setContent(locations[i][0]);
+         infowindow.open(map, marker);
+       }
+     })(marker, i));
+   }
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSlJNs0Je6kEIZyZ5ytB1yC0So2oHyDy4&callback=initMap">
+    </script>
+           </div>
+        </div>
+      </div>
+<div id="education" class="uni">
+  <div class="tab ">
+  <ul class="nav nav-stacked">
+    <li class="contac">
+      <h2 class="menu_ed">Overview</h2>
+      <button class="tablinks dropbtn" onclick="openCity3(event, 'U_intro')">
+        <img class="im_uni" src="static/images/typewrite.png"></i>
+    </button>
+    <li>
+      <h2 class="menu_ed">Universities</h2>
+    </li>
+    <li>
+    </li>
+    <li>
+        <div class=" dropdown">
+        <button class="tablinks dropdown-toggle dropbtn" data-toggle="dropdown" onclick="openCity(event, 'TU_exp')">
+        <img class="im_uni" src="static/images/TUDlogo.png"><i class="fa fa-chevron-circle-right flecha"></i>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#education" class="tablinks" onclick="openCity2(event, 'TU_exp')">Experience</a></li>
+          <li><a href="#education" class="tablinks" onclick="openCity2(event, 'TU_courses')">Courses</a></li>
+          <li><a href="#education" class="tablinks" onclick="openCity2(event, 'TU_thesis')">Thesis</a></li>
+        </ul>
+      </div>
+    </li>
+    <div class="dropdown">
+      <button class="tablinks dropbtn dropdown-toggle" data-toggle="dropdown" onclick="openCity(event, 'Ch_exp')">
+        <img class="im_uni" src="static/images/fcfm1.png"><i class="fa fa-chevron-circle-right  flecha"></i>
+      </button>
+      <ul class=" dropdown-menu">
+        <li><a href="#education" class="tablinks" onclick="openCity2(event, 'Ch_exp')">Experience</a></li>
+        <li><a href="#education" class="tablinks" onclick="openCity2(event, 'Ch_thesis')">Thesis and publication</a></li>
+      </ul>
+    </div>
+    <li class="contac">
+      <h2 class="menu_ed">Work</h2>
+      <button class="tablinks dropbtn" href="#education" onclick="openCity3(event, 'Contac')">
+        <img class="im_uni" src="static/images/contac1.png"></i>
+      </button>
+    </li>
+    <li class="contac">
+      <h2 class="menu_ed">Coding</h2>
+      <button class="tablinks dropbtn" href="#education" onclick="openCity3(event, 'Coding')">
+        <img class="im_uni" src="static/images/code_1.png"></i>
+    </button>
+
+</li>
+  </ul>
+</div>
+  <div id="Ch_exp" class="tabcontent beauchef1">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-11">
+    <h3>BSc. Electrical Engineering</h3>
+    <h3>2008-2014</h3>
+    <p>Electrical Engenieer.</p>
+  </div>
+  </div>
+  <div id="Ch_thesis" class="tabcontent beauchef1">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-11">
+    <h3>Sentiment Analysis in Twitter</h3>
+    <h3>2014</h3>
+  </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-6">
+      <ul class="text_edu">
+        <li>Sentiment analysis is a mechanism for understanding the natural disposition that people possess towards a specific topic.</li>
+        <li>Twitter was used as main platform which is popular in Chile, with more than <b>5 million users</b> in 2012.</li>
+        <li>The main goal was to analyse the public's opinions on the presidential primaries for the Alliance political party between two candidates and use sentiment analysis to <b>predict the outcome of the primaries</b>.</li>
+        <li>The methodology was based on a <b>Lexicon Dictionary</b>, using information collected during the previous months of the election and classifying each tweet as positive, negative or neutral for each candidate.</li>
+        <li>An exponential function was developed to extract the polarity for each candidate when both are mentioned in the tweet.</li>
+      </ul>
+        <i><img class="im_sent" src="static/images/sent_meth2.png"></i>
+      </div>
+      <div class="col-sm-4">
+        <ul class="text_edu">
+
+            The full thesis can be found here (in Spanish):
+</ul>
+<a href="http://repositorio.uchile.cl/handle/2250/130479"> <ul class="text_edu link1">Thesis U Chile</ul></a>
+<ul class="text_edu">
+            And the paper from L.  Montesinos,  J.P  Rodriguez,  M.  Orchard  ,  S.  Eyheramendy  ,  “Sentiment  analysis  and
+prediction  of  events  in  TWITTER” can be found here:
+        </ul>
+        <a href="http://ieeexplore.ieee.org/document/7404680/"> <ul class="text_edu link1">IEEE Chilecon 2015</ul></a>
+      </div>
+  </div>
+  <div id="TU_exp" class="tabcontent delft1">
+    <h3>2016-2018 </h3>
+    <h3> TU Delft </h3>
+    <h5>MSc. Electrical Engineering </h5>
+  </div>
+  <div id="TU_courses" class="tabcontent delft1">
+    <h3>2016-2018 </h3>
+    <h3> TU Delft </h3>
+    <h5>MSc. Electrical Engineering </h5>
+    <p style="text-decoration:underline">Advanced Courses:</p>
+      <div class="courses">
+      <li><a>Statistical Digital Signal Processing and Modeling</a></li>
+      <li><a>Digital Audio and Speech Processing</a></li>
+      <li><a>Machine Learning</a></li>
+      <li><a>Wavefield Imaging</a></li>
+      </div>
+  </div>
+  <div id="TU_thesis" class="tabcontent delft1">
+    <h3>2016-2018 </h3>
+    <h3> TU Delft </h3>
+    <h5>MSc. Electrical Engineering </h5>
+  </div>
+  <div id="Contac" class="tabcontent con1">
+    <h3>Contac Ingenieros</h3>
+    <ul>
+      <h3>2014-2016 </h3>
+      <h3> Contac Ingenieros Ltda.</h3>
+      <p style="text-decoration:underline">Pattern recognition and failure prognosis using PCA:</p>
+      <img  width="300px"src="static/images/PCA.gif">
+      <p style="text-decoration:underline;margin-top:30px;">Virtual sensors for critical KPI:</p>
+      <img  width="300px" src="static/images/P80a.jpg">
+    </ul>
+  </div>
+  <div id="Coding" class="tabcontent">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-11">
+      <h3>Code Languages</h3>
+      <ul>
+       <h1>MATLAB</h1>
+          <div class="w3-grey bar1">
+            <div class="w3-black bar2" style="width:90%"></div>
+          </div>
+          <h1>Python</h1>
+          <div class="w3-grey bar1">
+            <div class="w3-black bar2" style="width:20%"></div>
+          </div>
+            <h1>C#</h1>
+          <div class="w3-grey bar1">
+            <div class="w3-black bar2" style="width:30%"></div>
+          </div>
+            <h1>.NET</h1>
+          <div class="w3-grey bar1">
+            <div class="w3-black bar2" style="width:70%"></div>
+          </div>
+            <h1>Perl</h1>
+          <div class="w3-grey bar1">
+            <div class="w3-black bar2" style="width:50%"></div>
+          </div>
+            <h1>PHP</h1>
+          <div class="w3-grey bar1">
+            <div class="w3-black bar2" style="width:30%"></div>
+          </div>
+    </ul>
+    </div>
+    <h3 style="margin-left:5%;margin-top:2%">Knowledge on Android, R, Bootstrap, HTML, JavaScript, CSS. </h3>
+  </div>
+  <div id="U_intro" class="tabcontent over1">
+    <div class="row">
+				<div class="col-md-12">
+				<!--	<div class="page-header">
+					  <h1>Timeline Experience</h1>
+					</div> -->
+          <h2 style="text-align:center">Timeline Experience</h2>
+					<div style="display:inline-block;width:100%;">
+					<ul class="timeline timeline-horizontal">
+						<li class="timeline-item">
+							<div class="timeline-badge primary"><i class="glyphicon glyphicon-education"></i></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h4 class="timeline-title">Universidad de Chile. BSc. Electrical Eng.</h4>
+									<p><small class="text-muted"><i class="glyphicon glyphicon-calendar"></i>2008-2014</small></p>
+								</div>
+								<div class="timeline-body">
+									<p> Thesis and paper IEEE “Sentiment  analysis  and prediction  of  events  in  TWITTER”</p>
+								</div>
+							</div>
+						</li>
+						<li class="timeline-item">
+							<div class="timeline-badge success"><i class="glyphicon glyphicon-briefcase"></i></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h4 class="timeline-title">Contac Ingenieros Limitada. Project engineer.</h4>
+									<p><small class="text-muted"><i class="glyphicon glyphicon-calendar"></i> 2014-2016</small></p>
+								</div>
+								<div class="timeline-body">
+									<ul>
+                    Pattern recognition and failure prognosis using PCA.
+                  </ul>
+                  <ul>
+                    Virtual sensors with PLS.
+                  </ul>
+                  <ul>
+                    Report automation .NET.
+                  </ul>
+								</div>
+							</div>
+						</li>
+						<li class="timeline-item">
+							<div class="timeline-badge info"><i class="glyphicon glyphicon-education"></i></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h4 class="timeline-title">TU Delft. Msc. Electrical Eng. Signals and Systems</h4>
+									<p><small class="text-muted"><i class="glyphicon glyphicon-calendar"></i> 2016-present</small></p>
+								</div>
+								<div class="timeline-body">
+									<p>Signal processing in audio, medical imaging, wavefield imaging and machine learning techniques.</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				</div>
+        <h2 style="text-align:center;text-decoration:underline">Coding</h2>
+        <ul>
+          <div class="col-sm-6">
+         <h2 style="margin-bottom:10px">MATLAB</h2>
+         <p style="margin-bottom:20px">Most of universities projects and modeling part of work.</p>
+         <h2 style="margin-bottom:10px">.NET</h2>
+         <p style="margin-bottom:20px">"Contac" projects for compatibility.</p>
+       </div>
+       <div class="col-sm-6">
+          <h2 style="margin-bottom:10px">Perl</h2>
+          <p style="margin-bottom:20px">Thesis project, text analysis.</p>
+          <p>Knowledge on Python, C#, PHP, Android, R, Bootstrap, HTML, JavaScript, CSS. </p>
+          </ul>
+          </div>
+			</div>
+
+  </div>
+<a href="#" class="tablinks" onclick="openCity2(event, 'U_intro')" id="defaultOpen"> </a>
+</div>
+
+<footer id="hola" class="hola">
+  <div class="col-sm-7">
+    <p class="writeme">You can fin me here: </p>
+<ul class="social2">
+   <span class="fa-stack">
+     <a href="https://www.facebook.com/lucas.montesinos.3">
+     <i class="fa fa_custom fa-facebook fa-stack-1x "></i></a>
+   </span>
+   <span class="fa-stack ">
+    <a href="https://www.linkedin.com/in/lucas-montesinos-18238ba0/">
+     <i class="fa fa_custom fa-linkedin fa-stack-1x"></i></a>
+   </span>
+   <span class="fa-stack ">
+       <a href="https://twitter.com/Sudak_">
+     <i class="fa fa_custom fa-twitter fa-stack-1x "></i></a>
+   </span>
+   </ul>
+
+</div>
+<div class="col-sm-5">
+
+  <ul class="social2">
+    <p class="writeme">or just write me an email to: </p>
+  <span class="fa-stack fa-lg">
+      <a href="mailto:lmontesinos10@gmail.com">
+    <i class="fa fa_custom_c fa-envelope fa-stack-1x " aria-hidden="true"></i></a>
+  </span>
+  lmontesinos10@gmail.com
+</ul>
+</div>
+<a href="#" class="tablinks" onclick="openCity2(event, 'U_intro')" id="defaultOpen"> </a>
+</footer>
+
+
+
+<!--Javascript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+
+
+$(function(){
+       $('a').each(function(){
+           if ($(this).prop('href') == window.location.href) {
+               $(this).addClass('active'); $(this).parents('li').addClass('active');
+           }
+       });
+   });
+
+
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    evt.currentTarget.className += " active";
+}
+function openCity2(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+function openCity3(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    evt.currentTarget.className += " active";
+}
+// Get the element with id="defaultOpen" and click on it
+
+document.getElementById("defaultOpen").click();
+
+
+
+
+
+</script>
+
+
+    </body>
+</html>
