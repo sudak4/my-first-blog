@@ -11,11 +11,10 @@ html {
 	height:100%;
 }
 h1 {
-	margin:0 0 35px;
+	margin:0 0 3%;
 	text-transform:uppercase;
 	font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-weight:700;
-	letter-spacing:1px;
+	font-size: 5vh;
 }
 h2 {
 	margin:0 0 35px;
@@ -35,30 +34,28 @@ max-width: auto;
 h3 {
 	margin:0 0 2px;
 	font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-weight:500;
-	letter-spacing:1px;
+	font-size: 4vh;
 }
 h4 {
 	margin:0 0 2px;
 	font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-weight:500;
-	letter-spacing:1px;
-	text-align: right;
+	font-size: 3vh;
 }
 
 h5{
-	font-size: 20px;
+	font-size: 2vh;
 }
 .name1{
 	margin-top: 5%;
 }
 p {
-	font-size: 20px;
+	font-size: 3vh;
 }
 .desta{
 	color:#47A089;
 }
 a {
+	font-size: inherit;
 	color:inherit;
 	-webkit-transition:all .2s ease-in-out;
 	-moz-transition:all .2s ease-in-out;
@@ -459,7 +456,7 @@ box-shadow: 0 7px 4px #777;
 }
 
 .bar2{
-	height:35px;
+	height:5%;
 }
 
 
@@ -523,6 +520,7 @@ box-shadow: 0 7px 4px #777;
 	text-align:  left;
 }
 .fa_custom{
+	font-size: 3vh;
 	background-color: inherit;
 	border-radius: 100%;
 	border-color: white;
@@ -537,7 +535,7 @@ box-shadow: 0 7px 4px #777;
 
 
 .social2{
-	font-size: 24px;
+	font-size: 3vh;
 	border-radius: 10%;
 	display: inline-block;
 	text-align: center;
@@ -689,12 +687,12 @@ box-shadow: 0 7px 4px #777;
 }
 .timeline-horizontal .timeline-item {
   display: table-cell;
-  height: 280px;
+  height: 40%;
   width: 20%;
-  min-width: 320px;
   float: none !important;
+	padding-top: 5%;
   padding-left: 0px;
-  padding-right: 20px;
+  padding-right: 1%;
   margin: 0 auto;
   vertical-align: bottom;
 }
